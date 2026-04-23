@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: ecom-application
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ecomdb
+    username: embarkx
+    password: embarkx
+
+  database: POSTGRESQL
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Kolkata
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: MyNewApp
+    description: App Built by me
+    version: 0.2
